@@ -1,0 +1,48 @@
+
+==============================
+🕒 Fecha: 2025-11-17 17:50:49
+URL: http://localhost/MAYA/api/punch.php
+Payload: {"api_key":"522df0f3a063504feb5289faf6b4c2d4","fp_uid":"FP001","kind":"in"}
+Respuesta: {"ok":false,"error":"IP no autorizada."}
+
+==============================
+🕒 Fecha: 2025-11-17 17:51:14
+URL: http://localhost/MAYA/api/punch.php
+Payload: {"api_key":"522df0f3a063504feb5289faf6b4c2d4","fp_uid":"FP001","kind":"in"}
+Respuesta: {"ok":false,"error":"IP no autorizada."}
+
+==============================
+🕒 Fecha: 2025-11-17 18:03:07
+URL: http://localhost/MAYA/api/punch.php
+Payload: {"api_key":"522df0f3a063504feb5289faf6b4c2d4","fp_uid":"FP001","kind":"in"}
+Respuesta: {"ok":true,"device_id":1,"inserted":[{"idx":0,"id":1,"CvPerson":4,"ts":"2025-11-17 18:03:07","kind":"in"}],"errors":[]}
+
+==============================
+🕒 Fecha: 2025-11-17 18:05:31
+URL: http://localhost/MAYA/api/enroll_map.php
+Payload: {"api_key":"522df0f3a063504feb5289faf6b4c2d4","fp_uid":"FP001","CvPerson":4}
+Respuesta: {"ok":false,"error":"IP no autorizada."}
+
+==============================
+🕒 Fecha: 2025-11-17 18:05:48
+URL: http://localhost/MAYA/api/punch.php
+Payload: {"api_key":"522df0f3a063504feb5289faf6b4c2d4","fp_uid":"FP001","kind":"out"}
+Respuesta: {"ok":true,"device_id":1,"inserted":[{"idx":0,"id":2,"CvPerson":4,"ts":"2025-11-17 18:05:48","kind":"out"}],"errors":[]}
+
+==============================
+🕒 Fecha: 2025-11-17 18:15:08
+URL: http://localhost/MAYA/api/punch.php
+Payload: {"api_key":"522df0f3a063504feb5289faf6b4c2d4","fp_uid":"FP001","kind":"out"}
+Respuesta: {"ok":true,"device_id":1,"inserted":[{"idx":0,"id":3,"CvPerson":4,"ts":"2025-11-17 18:15:08","kind":"out"}],"errors":[]}
+
+==============================
+🕒 Fecha: 2025-11-17 18:15:24
+URL: http://localhost/MAYA/api/enroll_map.php
+Payload: {"api_key":"522df0f3a063504feb5289faf6b4c2d4\t","fp_uid":"FP001","CvPerson":4}
+Respuesta: {"ok":false,"error":"Error del servidor: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'"}
+
+==============================
+🕒 Fecha: 2025-11-17 18:19:33
+URL: http://localhost/MAYA/api/enroll_map.php
+Payload: {"api_key":"522df0f3a063504feb5289faf6b4c2d4\t","fp_uid":"FP001","CvPerson":4}
+Respuesta: {"ok":true,"device_id":1,"inserted":[{"CvPerson":4,"fp_uid":"FP001","device_ip":"127.0.0.1","ts":"2025-11-17 18:19:33"}],"errors":[],"message":"Huella registrada correctamente."}

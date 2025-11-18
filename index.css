@@ -1,0 +1,238 @@
+/* ===========================================
+   DASHBOARD / INDEX - PALETA AZUL REY / BLANCO / GRIS
+   =========================================== */
+
+:root {
+  --azul-rey: #0D47A1;
+  --azul-oscuro: #08306B;
+  --azul-hover: #1565C0;
+  --gris-fondo: #F5F5F5;
+  --gris-borde: #E0E0E0;
+  --gris-texto: #333;
+  --blanco: #FFFFFF;
+  --gris-medio: #BDBDBD;
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--blanco);
+  color: var(--gris-texto);
+  margin: 0;
+}
+
+/* ===== Contenedor principal ===== */
+.main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: var(--azul-rey);
+  margin: 0 0 10px;
+}
+
+.small {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ===== Tarjetas KPI ===== */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.card {
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 2px 6px rgba(13, 71, 161, 0.15);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--azul-rey);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card .num {
+  font-size: 28px;
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+}
+
+.card .hint {
+  font-size: 12px;
+  color: #777;
+}
+
+/* ===== Botones rápidos ===== */
+.quick {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 6px 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--azul-rey);
+  background: var(--blanco);
+  color: var(--azul-rey);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--azul-rey);
+  color: var(--blanco);
+}
+
+/* ===== Sección doble ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 18px;
+}
+
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Tabla ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--gris-borde);
+  text-align: left;
+}
+
+th {
+  background: var(--gris-fondo);
+  color: var(--azul-rey);
+  font-weight: 700;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== Badges ===== */
+.badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.badge.sol {
+  background: #fff8e1;
+  color: #f57f17;
+}
+
+.badge.apr {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.badge.rec {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* ===== Listas festivos ===== */
+.f-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.f-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--gris-borde);
+}
+
+.f-list li:last-child {
+  border-bottom: none;
+}
+
+/* ===== Footer (heredado) ===== */
+.footer {
+  background: var(--azul-rey);
+  color: var(--blanco);
+  padding: 12px 10px;
+  text-align: center;
+  margin-top: 30px;
+  border-top: 4px solid var(--azul-oscuro);
+}
+/* Barra contenedora del botón Salir */
+.logout-bar{
+  display:flex;
+  justify-content:flex-end;   /* botón alineado a la derecha */
+  padding:10px 16px;
+}
+
+/* Botón Salir (azul rey, compacto) */
+.logout-btn{
+  background:#0b3ea8;         /* azul rey */
+  border:1px solid #0b3ea8;
+  color:#fff;
+  padding:8px 14px;           /* compacto */
+  font-size:14px;             /* más pequeño */
+  line-height:1;
+  border-radius:10px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  box-shadow:0 1px 3px rgba(0,0,0,.12);
+  transition:background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+.logout-btn:hover{
+  background:#0a358f;         /* tono más oscuro al hover */
+  border-color:#0a358f;
+  transform:translateY(-1px);
+  box-shadow:0 3px 6px rgba(0,0,0,.16);
+}
+
+.logout-btn i{
+  font-size:14px;
+}

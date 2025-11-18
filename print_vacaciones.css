@@ -1,0 +1,137 @@
+/* ===========================================
+   PRINT VACACIONES - PALETA AZUL REY / BLANCO / GRIS
+   =========================================== */
+
+:root {
+  --azul-rey: #0D47A1;
+  --azul-hover: #1565C0;
+  --gris-borde: #E0E0E0;
+  --gris-fondo: #F5F5F5;
+  --gris-texto: #333;
+  --gris-medio: #BDBDBD;
+  --blanco: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: var(--gris-texto);
+  background: var(--blanco);
+}
+
+/* =========== Encabezado =========== */
+.header {
+  padding: 16px;
+  border-bottom: 3px solid var(--azul-rey);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1,
+.header h2,
+.header h3 {
+  margin: 0;
+  color: var(--azul-rey);
+  text-align: center;
+  font-weight: 700;
+}
+
+/* =========== Acciones (botones arriba) =========== */
+.actions {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--azul-rey);
+  color: var(--azul-rey);
+  background: var(--blanco);
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--azul-rey);
+  color: var(--blanco);
+}
+
+/* =========== Contenedor general =========== */
+.container {
+  padding: 16px;
+}
+
+/* =========== Tabla =========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  border: 1px solid var(--gris-borde);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+th {
+  background: var(--gris-fondo);
+  color: var(--azul-rey);
+  font-weight: 600;
+}
+
+tr:nth-child(even) td {
+  background: var(--gris-fondo);
+}
+
+/* =========== Modo de impresión =========== */
+@media print {
+  .actions {
+    display: none !important;
+  }
+
+  .header {
+    border: none;
+  }
+
+  @page {
+    margin: 12mm;
+  }
+
+  body {
+    margin: 15mm;
+  }
+
+  th {
+    background: var(--azul-rey) !important;
+    color: var(--blanco) !important;
+  }
+
+  td {
+    font-size: 13px;
+  }
+
+  h2,
+  h3 {
+    color: var(--azul-rey) !important;
+  }
+
+  tr:nth-child(even) td {
+    background: var(--gris-fondo) !important;
+  }
+}

@@ -1,0 +1,289 @@
+/* ========================================================
+   REPORTE DE ASISTENCIA DIARIA — ESTILO AZUL REY / BLANCO / GRIS
+   ======================================================== */
+
+:root {
+  --azul-rey: #0D47A1;
+  --azul-hover: #1565C0;
+  --azul-oscuro: #08306B;
+  --gris-fondo: #F5F5F5;
+  --gris-borde: #E0E0E0;
+  --gris-texto: #333;
+  --blanco: #FFFFFF;
+}
+
+/* ===== Filtros superiores ===== */
+.form-container {
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+  margin: 16px auto;
+  max-width: 1200px;
+}
+
+h2 {
+  color: var(--azul-rey);
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.filters-grid-asist {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.4fr) minmax(180px, .8fr) minmax(180px, .8fr) auto auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.filters-grid-asist .field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.filters-grid-asist label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--azul-rey);
+  margin-bottom: 6px;
+}
+
+.filters-grid-asist select,
+.filters-grid-asist input[type="date"] {
+  width: 100%;
+  border: 1px solid var(--gris-borde);
+  border-radius: 8px;
+  padding: 8px;
+  background: var(--blanco);
+  font-size: 14px;
+  color: var(--gris-texto);
+}
+
+/* ===== Botones ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--azul-rey);
+  border-radius: 8px;
+  background: var(--blanco);
+  color: var(--azul-rey);
+  padding: 8px 12px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--azul-rey);
+  color: var(--blanco);
+}
+
+.btn-primary {
+  background: var(--azul-rey);
+  color: var(--blanco);
+}
+
+.btn-primary:hover {
+  background: var(--azul-hover);
+}
+
+/* ===== Tabla de datos ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid var(--gris-borde);
+  text-align: left;
+}
+
+th {
+  background: var(--gris-fondo);
+  color: var(--azul-rey);
+  font-weight: 700;
+}
+
+tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+/* ===== Estados visuales ===== */
+.status {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.status.present   { background: #E3F2FD; color: var(--azul-rey); }
+.status.late      { background: #FFF3CD; color: #856404; }
+.status.absent    { background: #F8D7DA; color: #721C24; }
+.status.on_leave  { background: #D1ECF1; color: #0C5460; }
+.status.holiday   { background: #E2E3E5; color: #383D41; }
+.status.rest      { background: #ECECEC; color: #444; }
+
+/* ===== Totales ===== */
+.card {
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.05);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.bok {
+  background: #E8F5E9;
+  color: #1B5E20;
+}
+
+.boff {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+/* ===== Responsive ===== */
+@media (max-width:1024px) {
+  .filters-grid-asist {
+    grid-template-columns: minmax(260px,1fr) minmax(180px,1fr) minmax(180px,1fr);
+  }
+  .filters-grid-asist .actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width:640px) {
+  .filters-grid-asist { grid-template-columns: 1fr; }
+}
+
+/* ===== Estilo de impresión ===== */
+/* ===== Estilo de impresión (versión final con tabla unida al encabezado) ===== */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #print-header,
+  #print-header *,
+  table,
+  table * {
+    visibility: visible;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  /* ===== Encabezado institucional ===== */
+  #print-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    background: #fff;
+    border-bottom: 3px solid var(--azul-rey);
+    padding: 6px 0 2px;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #print-header strong {
+    font-size: 15px;
+    color: var(--azul-rey);
+  }
+
+  /* ===== Tabla principal ===== */
+  table {
+    position: relative;
+    top: 50px; /* justo debajo del encabezado */
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border: 1px solid #000 !important;
+    table-layout: fixed !important;
+    font-size: 10.2px !important;
+    page-break-inside: avoid !important;
+  }
+
+  th, td {
+    border: 1px solid #000 !important;
+    padding: 5px 3px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* ===== Encabezados de tabla ===== */
+  th {
+    background: var(--azul-rey) !important;
+    color: #fff !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ===== Filas alternas para legibilidad ===== */
+  tr:nth-child(even) td {
+    background: #f2f4f8 !important;
+  }
+
+  /* ===== Inputs dentro de la tabla ===== */
+  input[type="text"],
+  input[type="number"] {
+    width: 95% !important;
+    font-size: 10px !important;
+    padding: 2px 3px !important;
+    border: 1px solid #555 !important;
+    border-radius: 2px !important;
+  }
+
+  /* ===== Evita cortes entre páginas ===== */
+  tr, td, th {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* ===== Numeración de páginas ===== */
+  body::after {
+    content: "Página " counter(page) " de " counter(pages);
+    position: fixed;
+    bottom: 8mm;
+    right: 15mm;
+    font-size: 10px;
+    color: #444;
+  }
+}
+

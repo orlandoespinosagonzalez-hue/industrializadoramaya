@@ -1,0 +1,246 @@
+:root {
+  --azul-marino: #001f3f;
+  --azul-oscuro: #001733;
+  --gris-fondo: #f4f6f8;
+  --gris-borde: #d1d5db;
+  --blanco: #ffffff;
+}
+
+/* ==============================
+   ESTILO BASE
+============================== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: var(--gris-fondo);
+  color: #1e1e1e;
+}
+
+/* ==============================
+   BARRA SUPERIOR
+============================== */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background: var(--blanco);
+  border-bottom: 2px solid var(--azul-marino);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.top-bar h2 {
+  color: var(--azul-marino);
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Botones */
+.top-bar button {
+  background: var(--azul-marino);
+  color: var(--blanco);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.top-bar button:hover {
+  background: var(--azul-oscuro);
+  transform: scale(1.05);
+}
+
+.top-bar .back {
+  background: #5c6b7a;
+}
+
+.top-bar .back:hover {
+  background: #3b4752;
+}
+
+/* ==============================
+   ENCABEZADO PRINCIPAL
+============================== */
+header {
+  text-align: center;
+  background: var(--blanco);
+  padding: 18px 0 12px;
+  border-bottom: 3px solid var(--azul-marino);
+}
+
+header h1 {
+  margin: 0;
+  color: var(--azul-marino);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+header div {
+  font-weight: 600;
+  color: var(--azul-marino);
+  margin-top: 4px;
+}
+
+header small {
+  color: #444;
+  font-size: 13px;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
+main {
+  padding: 25px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18mm;
+}
+
+/* ==============================
+   TARJETAS DE EMPLEADOS
+============================== */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--gris-borde);
+  background: var(--blanco);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card-header {
+  background: linear-gradient(90deg, var(--azul-marino), #003366);
+  color: var(--blanco);
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+.card-body {
+  padding: 16px;
+  background: #fafbfd;
+}
+
+.card h3 {
+  color: var(--azul-marino);
+  margin: 0 0 4px 0;
+  font-size: 15px;
+}
+
+.card small {
+  color: #5a5a5a;
+}
+
+.card p {
+  font-size: 13px;
+  margin: 3px 0;
+  color: #333;
+}
+
+/* GRID DE DATOS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.grid div {
+  background: #f1f4f8;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 13px;
+  border-left: 3px solid rgba(0, 31, 63, 0.2);
+}
+
+/* ==============================
+   OBSERVACIONES
+============================== */
+.obs {
+  background: #fff7d1;
+  border-left: 5px solid #ffb300;
+  padding: 8px 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.obs::before {
+  content: "🗒";
+  font-size: 15px;
+}
+
+/* ==============================
+   IMPRESIÓN
+============================== */
+@media print {
+  .top-bar {
+    display: none !important;
+  }
+
+  body {
+    background: var(--blanco) !important;
+    color: #000;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  header, header *, main, main * {
+    visibility: visible !important;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--blanco);
+    border-bottom: 2px solid var(--azul-marino);
+  }
+
+  main {
+    margin-top: 40mm;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    page-break-inside: avoid !important;
+  }
+
+  .card-header {
+    background: var(--azul-marino) !important;
+    color: var(--blanco) !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 12mm 12mm;
+  }
+
+  body::after {
+    content: "Página " counter(page) " de " counter(pages);
+    position: fixed;
+    bottom: 8mm;
+    right: 15mm;
+    font-size: 10px;
+    color: #555;
+  }
+}

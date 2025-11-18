@@ -1,0 +1,185 @@
+/* ===========================================
+   LOGIN - ESTILO CORPORATIVO AZUL REY / BLANCO / GRIS
+   =========================================== */
+
+:root {
+  --azul-rey: #0D47A1;
+  --azul-hover: #1565C0;
+  --azul-oscuro: #08306B;
+  --gris-fondo: #F5F5F5;
+  --gris-borde: #E0E0E0;
+  --gris-texto: #333;
+  --blanco: #FFFFFF;
+}
+
+/* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== Fondo global con gradiente ===== */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1E88E5 100%);
+  color: var(--gris-texto);
+}
+
+/* ===== Encabezado ===== */
+.header {
+  background: transparent;
+  color: var(--blanco);
+  text-align: center;
+  padding: 30px 10px 10px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Contenedor principal ===== */
+.wrap {
+  max-width: 420px;
+  width: 90%;
+  margin: auto;
+  background: var(--blanco);
+  border-radius: 16px;
+  padding: 30px 26px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-top: 6px solid var(--azul-rey);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  color: var(--azul-rey);
+  margin-top: 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ===== Formulario ===== */
+label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--azul-rey);
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 8px 0 16px;
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  font-size: 15px;
+  background: var(--blanco);
+  color: var(--gris-texto);
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  border-color: var(--azul-rey);
+  box-shadow: 0 0 4px rgba(13, 71, 161, 0.4);
+  outline: none;
+}
+
+/* ===== Contraseña con botón ojo ===== */
+.pwd-wrap {
+  position: relative;
+}
+
+.pwd-wrap input {
+  padding-right: 50px;
+}
+
+.toggle-vis {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.toggle-vis:hover {
+  color: var(--azul-rey);
+}
+
+/* ===== Botón principal ===== */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--azul-rey);
+  background: var(--azul-rey);
+  color: var(--blanco);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease-in-out;
+}
+
+button:hover {
+  background: var(--azul-hover);
+  box-shadow: 0 3px 8px rgba(13, 71, 161, 0.3);
+}
+
+/* ===== Texto de ayuda ===== */
+.small {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+  font-size: 13px;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--blanco);
+  padding: 14px 10px;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 500px) {
+  .wrap {
+    margin: 30px auto;
+    padding: 24px 20px;
+  }
+  .header h1 {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}

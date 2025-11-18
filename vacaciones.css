@@ -1,0 +1,155 @@
+/* ================================
+   VACACIONES - NUEVO DISEÑO AZUL REY
+   ================================ */
+
+/* Paleta base */
+:root {
+  --azul-rey: #0D47A1;
+  --azul-hover: #1565C0;
+  --gris-claro: #F5F5F5;
+  --gris-borde: #E0E0E0;
+  --gris-texto: #555;
+  --blanco: #FFFFFF;
+}
+
+/* ===================== Tabla ===================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border: 1px solid var(--gris-borde);
+  background: var(--blanco);
+}
+th, td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid var(--gris-borde);
+  color: var(--gris-texto);
+}
+th {
+  background: var(--azul-rey);
+  color: var(--blanco);
+}
+
+/* ===================== Formulario ===================== */
+.form-container {
+  background: var(--gris-claro);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border: 1px solid var(--gris-borde);
+}
+.form-container label {
+  font-weight: bold;
+  color: var(--azul-rey);
+}
+.form-container input,
+.form-container select,
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid var(--gris-borde);
+  font-size: 16px;
+  background: var(--blanco);
+  color: var(--gris-texto);
+}
+.form-container button {
+  background: var(--azul-rey);
+  color: var(--blanco);
+  border: 1px solid var(--azul-rey);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.form-container button:hover {
+  background: var(--azul-hover);
+}
+
+/* ===================== Botones ===================== */
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid var(--azul-rey);
+  background: var(--blanco);
+  color: var(--azul-rey);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background: var(--azul-rey);
+  color: var(--blanco);
+}
+.btn-danger {
+  border-color: #b71c1c;
+  color: #b71c1c;
+}
+.btn-danger:hover {
+  background: #b71c1c;
+  color: #fff;
+}
+
+/* ===================== Badges ===================== */
+.badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #eee;
+  color: #333;
+}
+.badge.sol { background: #e3f2fd; color: #0d47a1; }
+.badge.apr { background: #e8f5e9; color: #2e7d32; }
+.badge.rec { background: #ffebee; color: #c62828; }
+
+/* ===================== Filtros ===================== */
+form[method="get"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-end;
+  margin: 15px 0;
+}
+form[method="get"] > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  flex: 1;
+}
+form[method="get"] label {
+  font-weight: 600;
+  color: var(--azul-rey);
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+form[method="get"] select,
+form[method="get"] input[type="date"] {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid var(--gris-borde);
+  border-radius: 6px;
+  background-color: var(--blanco);
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+form[method="get"] select:focus,
+form[method="get"] input[type="date"]:focus {
+  border-color: var(--azul-rey);
+  box-shadow: 0 0 3px rgba(13, 71, 161, 0.4);
+  outline: none;
+}
+form[method="get"] .btn {
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* ===================== Filas de estado ===================== */
+tr.vac-activa    { background-color: #e3f2fd !important; border-left: 4px solid #0d47a1; } /* azul */
+tr.vac-espera    { background-color: #fffde7 !important; border-left: 4px solid #ffb300; } /* amarillo */
+tr.vac-terminada { background-color: #eceff1 !important; border-left: 4px solid #90a4ae; } /* gris azulado */
+tr.vac-rechazada { background-color: #fbe9e7 !important; border-left: 4px solid #e53935; } /* rojo claro */
+
+.main-content { margin: 20px; }
+h2 { color: var(--azul-rey); margin-top: 0; }

@@ -1,0 +1,2 @@
+[2025-11-17 18:49:05] ❌ ERROR: Método inválido GET
+[2025-11-17 18:50:13] ❌ ERROR: Método inválido GET

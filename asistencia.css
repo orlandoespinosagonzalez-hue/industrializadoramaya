@@ -1,0 +1,152 @@
+/* ===========================================
+   ASISTENCIA - PALETA AZUL REY / BLANCO / GRIS
+   =========================================== */
+
+:root {
+  --azul-rey: #0D47A1;
+  --azul-oscuro: #08306B;
+  --azul-hover: #1565C0;
+  --gris-fondo: #F5F5F5;
+  --gris-borde: #E0E0E0;
+  --gris-texto: #333;
+  --blanco: #FFFFFF;
+}
+
+/* ===== Contenedor general ===== */
+.container {
+  max-width: 1200px;
+  margin: 14px auto;
+  padding: 0 14px;
+}
+
+h2 {
+  color: var(--azul-rey);
+  margin: 6px 0 12px;
+}
+
+/* ===== Tabs / pestañas ===== */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.tabs .tab {
+  border: 1px solid var(--azul-rey);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--azul-rey);
+  text-decoration: none;
+  background: var(--blanco);
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabs .tab:hover {
+  background: var(--azul-hover);
+  color: var(--blanco);
+}
+
+/* Pestaña activa */
+.tabs .tab.active,
+.tabs .tab[style*="#5a0017"],
+.tabs .tab[style*="#800020"] {
+  background: var(--azul-rey) !important;
+  color: var(--blanco) !important;
+  border-color: var(--azul-oscuro) !important;
+}
+
+/* ===== Tarjetas contenedoras ===== */
+.card {
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+}
+
+/* ===== Tablas internas (por si los includes tienen tablas) ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid var(--gris-borde);
+  text-align: left;
+}
+
+th {
+  background: var(--gris-fondo);
+  color: var(--azul-rey);
+  font-weight: 700;
+}
+
+tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+/* ===== Botones de acción (en reportes o kioscos) ===== */
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--azul-rey);
+  border-radius: 8px;
+  background: var(--blanco);
+  color: var(--azul-rey);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--azul-rey);
+  color: var(--blanco);
+}
+
+/* ===== Formularios internos ===== */
+input[type="text"],
+input[type="date"],
+select {
+  border: 1px solid var(--gris-borde);
+  border-radius: 6px;
+  padding: 8px;
+  width: 100%;
+  color: var(--gris-texto);
+  background: var(--blanco);
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: 600;
+  color: var(--azul-rey);
+  font-size: 14px;
+}
+
+/* ===== Notas / mensajes ===== */
+.alert-info {
+  background: #E3F2FD;
+  color: var(--azul-rey);
+  border: 1px solid #BBDEFB;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--azul-rey);
+  color: var(--blanco);
+  padding: 12px 10px;
+  text-align: center;
+  margin-top: 30px;
+  border-top: 4px solid var(--azul-oscuro);
+}

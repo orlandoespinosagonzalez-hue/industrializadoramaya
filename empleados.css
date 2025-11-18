@@ -1,0 +1,189 @@
+/* ===========================================
+   EMPLEADOS - PALETA AZUL REY / BLANCO / GRIS
+   =========================================== */
+
+:root {
+  --azul-rey: #0D47A1;
+  --azul-oscuro: #08306B;
+  --azul-hover: #1565C0;
+  --gris-fondo: #F5F5F5;
+  --gris-borde: #E0E0E0;
+  --gris-texto: #333;
+  --gris-medio: #BDBDBD;
+  --blanco: #FFFFFF;
+}
+
+/* ===== Reset general ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: var(--gris-texto);
+  background: var(--blanco);
+}
+
+/* ===== Encabezado y navbar (heredado de header.css) ===== */
+.header {
+  background: var(--azul-rey);
+  color: var(--blanco);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px solid var(--azul-oscuro);
+}
+
+.navbar {
+  background: var(--azul-rey);
+  text-align: center;
+}
+
+.navbar a {
+  color: var(--blanco);
+  padding: 14px 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  background: var(--azul-hover);
+}
+
+/* ===== Contenedor principal ===== */
+.main {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 0 16px;
+}
+
+h2 {
+  color: var(--azul-rey);
+  margin: 0 0 8px;
+}
+
+/* ===== Formularios ===== */
+.form {
+  background: var(--gris-fondo);
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.form label {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--azul-rey);
+}
+
+.form input,
+.form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gris-borde);
+  border-radius: 8px;
+  margin: 6px 0 12px;
+  background: var(--blanco);
+  color: var(--gris-texto);
+}
+
+.form button {
+  background: var(--azul-rey);
+  color: var(--blanco);
+  border: 1px solid var(--azul-oscuro);
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form button:hover {
+  background: var(--azul-hover);
+}
+
+/* ===== Grid y filas ===== */
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+/* ===== Tabla ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  margin-top: 14px;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--gris-borde);
+  text-align: left;
+}
+
+th {
+  background: var(--gris-fondo);
+  color: var(--azul-rey);
+  font-weight: 600;
+}
+
+tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+/* ===== Estados / Badges ===== */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--blanco);
+}
+
+.bok {
+  background: #2e7d32; /* verde */
+}
+
+.boff {
+  background: #c62828; /* rojo */
+}
+
+/* ===== Botones ===== */
+.btn {
+  display: inline-block;
+  border: 1px solid var(--azul-rey);
+  padding: 6px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--azul-rey);
+  margin: 2px 0;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background: var(--blanco);
+}
+
+.btn:hover {
+  background: var(--azul-rey);
+  color: var(--blanco);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--azul-rey);
+  color: var(--blanco);
+  padding: 12px 10px;
+  text-align: center;
+  margin-top: 30px;
+  border-top: 4px solid var(--azul-oscuro);
+}

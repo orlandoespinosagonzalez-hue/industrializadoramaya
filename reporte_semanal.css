@@ -1,0 +1,275 @@
+:root {
+  --azul-marino: #001f3f;
+  --azul-marino-oscuro: #001733;
+  --gris-claro: #f5f7fa;
+  --gris-borde: #cbd5e0;
+  --blanco: #ffffff;
+}
+
+/* ==============================
+   ESTILO GENERAL DE PÁGINA
+============================== */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--gris-claro);
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL DE FILTROS
+============================== */
+.form-container {
+  max-width: 1200px;
+  margin: 25px auto;
+  background: var(--blanco);
+  border-radius: 12px;
+  border: 1px solid var(--gris-borde);
+  padding: 22px 28px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h2 {
+  color: var(--azul-marino);
+  font-size: 1.45rem;
+  margin-top: 0;
+  border-bottom: 2px solid var(--azul-marino);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+/* ==============================
+   FILTROS
+============================== */
+.filters-grid-asist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  align-items: end;
+}
+
+.filters-grid-asist .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters-grid-asist label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.filters-grid-asist select,
+.filters-grid-asist input[type="date"] {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--gris-borde);
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.filters-grid-asist select:focus,
+.filters-grid-asist input[type="date"]:focus {
+  outline: none;
+  border-color: var(--azul-marino);
+  box-shadow: 0 0 4px rgba(0, 31, 63, 0.3);
+}
+
+/* ==============================
+   BOTONES
+============================== */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  background: var(--azul-marino);
+  border: 1px solid var(--azul-marino);
+  color: var(--blanco);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--azul-marino-oscuro);
+}
+
+.btn-light {
+  background: var(--blanco);
+  border: 1px solid var(--azul-marino);
+  color: var(--azul-marino);
+}
+
+.btn-light:hover {
+  background: #f0f4f8;
+}
+
+/* ==============================
+   REPORTE SEMANAL
+============================== */
+#reporte-semanal {
+  max-width: 1200px;
+  margin: 30px auto;
+  background: var(--blanco);
+  padding: 20px 24px;
+  border-radius: 12px;
+  border: 1px solid var(--gris-borde);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#reporte-semanal h2 {
+  text-align: center;
+  color: var(--azul-marino);
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* ==============================
+   ALERTA VACÍA
+============================== */
+.alerta-vacia {
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* ==============================
+   TARJETAS DE EMPLEADOS
+============================== */
+.grid-reporte {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--blanco);
+  border-radius: 12px;
+  border: 1px solid var(--gris-borde);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card h3 {
+  margin: 0;
+  color: var(--azul-marino);
+  font-size: 1.05rem;
+}
+
+.card small {
+  color: #555;
+  font-weight: normal;
+}
+
+.card p {
+  margin: 6px 0 10px;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.grid-datos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.grid-datos div {
+  background: var(--gris-claro);
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 13px;
+}
+
+.grid-datos .destacado {
+  background: #e8f5ff;
+  color: var(--azul-marino);
+}
+
+.grid-datos .destacado2 {
+  background: #edf2fa;
+  color: var(--azul-marino);
+}
+
+/* ==============================
+   OBSERVACIONES
+============================== */
+.observacion {
+  margin-top: 10px;
+  background: #fff8e1;
+  border-left: 4px solid #ff9800;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* ==============================
+   ENCABEZADO IMPRESIÓN
+============================== */
+#print-header {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 3px solid var(--azul-marino);
+  padding: 6px 0;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+#print-header strong {
+  color: var(--azul-marino);
+  font-size: 16px;
+}
+
+/* ==============================
+   IMPRESIÓN (VISTA PREVIA)
+============================== */
+@media print {
+  body * { visibility: hidden; }
+  #print-wrapper, #print-wrapper * { visibility: visible; }
+
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  #print-wrapper {
+    width: 100%;
+    border: 2px solid #000;
+    padding: 10mm;
+    box-sizing: border-box;
+  }
+
+  #reporte-semanal {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .card {
+    page-break-inside: avoid;
+    border: 1px solid #000 !important;
+  }
+
+  body::after {
+    content: "Página " counter(page) " de " counter(pages);
+    position: fixed;
+    bottom: 8mm;
+    right: 15mm;
+    font-size: 10px;
+    color: #444;
+  }
+}
